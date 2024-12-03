@@ -1,0 +1,16 @@
+name: kickof
+description: Kickof Golang
+ignoreFiles: .git
+modules:
+  - name: template
+    language: docker
+    description: Module description
+    volumes:
+      - alias: volume
+        mountPath: /var/www/html
+    ports:
+      - alias: http
+        portNumber: 80
+    functions:
+      - name: entry
+        description: the entry point for the function
