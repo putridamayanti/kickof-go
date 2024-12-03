@@ -18,8 +18,7 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("No .env file, will use system environment")
-		//return
+		log.Println("No .env file, will use system environment")
 	}
 
 	log.Println("Version: ", os.Getenv("VERSION"))
