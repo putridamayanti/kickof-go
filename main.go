@@ -18,9 +18,11 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
-		return
+		log.Fatal("No .env file, will use system environment")
+		//return
 	}
+
+	log.Println("Version: ", os.Getenv("VERSION"))
 
 	if !database.Init() {
 		log.Printf("Connected to MongoDB URI: Failure")
